@@ -34,7 +34,6 @@ export const normalTexture = textureLoader.load(
   '../static/textures/one/NORM.jpg'
 );
 
-export const occ = textureLoader.load('../static/textures/one/OCC.jpg');
 export const sceneMaterialColor = '#ffffff';
 export const sceneMaterial = new THREE.MeshPhysicalMaterial({
   transparent: true,
