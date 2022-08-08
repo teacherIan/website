@@ -1,38 +1,13 @@
 import * as THREE from 'three';
+import mainColorURL from '../static/textures/one/COLOR_copy-min.jpg';
+import roughnessTextureURL from '../static/textures/one/ROUGH.jpg';
+import normalTextureURL from '../static/textures/one/NORM.jpg';
 
-/**
- * Textures
- */
+const textureLoader = new THREE.TextureLoader();
 
-const loadingManager = new THREE.LoadingManager();
-loadingManager.onStart = () => {
-  console.log('loadingManager: loading started');
-};
-loadingManager.onLoaded = () => {
-  console.log('loadingManager: loading finished');
-};
-loadingManager.onProgress = () => {
-  console.log('loadingManager: loading progressing');
-};
-loadingManager.onError = () => {
-  console.log('loadingManager: loading error');
-};
-
-const textureLoader = new THREE.TextureLoader(loadingManager);
-
-/**
- * Map one
- */
-export const roughnessTexture = textureLoader.load(
-  '../static/textures/one/ROUGH.jpg'
-);
-export const mainColorTexture = textureLoader.load(
-  '../static/textures/one/COLOR_copy-min.jpg'
-);
-
-export const normalTexture = textureLoader.load(
-  '../static/textures/one/NORM.jpg'
-);
+export const roughnessTexture = textureLoader.load(roughnessTextureURL);
+export const mainColorTexture = textureLoader.load(mainColorURL);
+export const normalTexture = textureLoader.load(normalTextureURL);
 
 export const sceneMaterialColor = '#ffffff';
 export const sceneMaterial = new THREE.MeshPhysicalMaterial({

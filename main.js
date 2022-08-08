@@ -88,7 +88,6 @@ const loop = () => {
     objectArray = createSphere();
     scene.add(objectArray.mesh);
     world.addBody(objectArray.cannon);
-    console.log(renderer.info);
   }
 
   pointLight.position.x =
