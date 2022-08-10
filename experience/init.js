@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 const canvas = document.getElementById('webgl');
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+// import { cssRenderer, cssScene } from './cssScene';
 
 /**
  * Screen Size
@@ -23,10 +24,9 @@ export const camera = new THREE.PerspectiveCamera(
   sizes.width / sizes.height
 );
 
-camera.position.z = 100;
-camera.position.y = 100;
-camera.position.x = 0;
-camera.rotateX(20);
+camera.position.z = 200;
+camera.position.y = 150;
+camera.position.x = 100;
 
 scene.add(camera);
 
@@ -67,3 +67,8 @@ controls.addEventListener('change', () => {
 
 export const backgroundColor = '#0d0d2b';
 scene.background = new THREE.Color(backgroundColor);
+
+// document.body.appendChild(renderer.domElement);
+
+controls.enablePan = false;
+controls.enableRotate = false;

@@ -4,7 +4,7 @@ import { sceneMaterial } from './textureloader';
 
 export const worldFloorParams = {
   x: 70,
-  y: 40,
+  y: 70,
   z: 70,
   rotateX: 0,
   rotateY: 0,
@@ -37,7 +37,7 @@ export const cannonBoxBody = new CANNON.Body({
   position: new CANNON.Vec3(0, -5, 0),
 });
 
-worldFloor.position.y = -2;
+worldFloor.position.y = -20;
 
 window.addEventListener('mousemove', (event) => {
   const x = event.clientX / window.innerWidth - 0.5;
