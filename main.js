@@ -19,8 +19,9 @@ import {
   pointLightHelperTwo,
 } from './experience/lights';
 import { paramsGUI } from './experience/lights';
-// import {  } from './experience/raycaster';
+import { raycaster, mouse } from './experience/raycaster';
 import './experience/datGui';
+import { textMesh } from './experience/text';
 
 // import {
 //   cssRenderer,
@@ -30,6 +31,8 @@ import './experience/datGui';
 //   containerCSSObject,
 //   container,
 // } from './experience/cssScene';
+
+import './experience/text';
 
 /**
  * debug
@@ -96,16 +99,23 @@ const loop = () => {
    * update raycaster
    */
 
-  // raycaster.setFromCamera(mouse, camera);
-  // const itemsToCheck = [containerCSSObject, sunMeshOne];
-  // const intersect = raycaster.intersectObjects(itemsToCheck, true);
-  // console.log(intersect);
+  raycaster.setFromCamera(mouse, camera);
+  const itemsToCheck = [textMesh];
+  const intersect = raycaster.intersectObjects(itemsToCheck, true);
+  if (intersect.length > 0) {
+    document.getElementById('webgl').style.cursor = 'pointer';
+    window.addEventListener('click', () => {
+      console.log('clicked');
+    });
+  } else {
+    document.getElementById('webgl').style.cursor = 'initial';
+  }
 
   /**
    * World object is destroyed and recreated after falling
    */
 
-  if (objectArray.mesh.position.y < -550) {
+  if (objectArray.mesh.position.y < -1000) {
     world.removeBody(objectArray.cannon);
     scene.remove(objectArray.mesh);
     objectArray = createSphere();

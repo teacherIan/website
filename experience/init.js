@@ -70,5 +70,5 @@ scene.background = new THREE.Color(backgroundColor);
 
 // document.body.appendChild(renderer.domElement);
 
-controls.enablePan = false;
-controls.enableRotate = false;
+// controls.enablePan = false;
+// controls.enableRotate = false;
