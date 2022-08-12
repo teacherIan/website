@@ -1,3 +1,5 @@
+const menuHTML = document.querySelector('.container');
+import './htmlController';
 import './style.css';
 import * as THREE from 'three';
 import { scene, renderer, camera } from './experience/init.js';
@@ -21,8 +23,14 @@ import {
 import { paramsGUI } from './experience/lights';
 import { raycaster, mouse } from './experience/raycaster';
 import './experience/datGui';
-import { textMesh } from './experience/text';
+import { textGroup } from './experience/text';
+import { currentScene } from './experience/htmlController';
+import * as TWEEN from '@tweenjs/tween.js';
 
+let showMenu = false;
+let timeout = false;
+
+console.log(menuHTML);
 // import {
 //   cssRenderer,
 //   cssScene,
@@ -31,8 +39,6 @@ import { textMesh } from './experience/text';
 //   containerCSSObject,
 //   container,
 // } from './experience/cssScene';
-
-import './experience/text';
 
 /**
  * debug
@@ -43,6 +49,12 @@ const stats = Stats();
 document.body.appendChild(stats.dom);
 // const axisHelper = new THREE.AxesHelper(10);
 // scene.add(axisHelper);
+
+/**
+ * Text Group
+ */
+
+scene.add(textGroup);
 
 /**
  * Add Lights
@@ -87,7 +99,7 @@ let oldElapsedTime = 0;
 const vector = new THREE.Vector3(100, -50, 0);
 camera.lookAt(vector);
 
-const loop = () => {
+const loop = (time) => {
   stats.update();
 
   const elapsedTime = clock.getElapsedTime();
@@ -96,17 +108,49 @@ const loop = () => {
   world.step(1 / 60, deltaTime, 3);
 
   /**
+   * Update Tween.js
+   */
+
+  TWEEN.update(time);
+
+  /**
    * update raycaster
    */
 
+  const handleClick = () => {
+    timeout = !timeout;
+    showMenu = !showMenu;
+    if (showMenu) {
+      menuHTML.style.width = 'calc(15vh + 15vw + 20px);';
+      menuHTML.style.opacity = 1;
+      timeout = false;
+    }
+    // setTimeout(() => {
+    //   console.log('Handled click');
+
+    //   console.log(showMenu);
+
+    //   timeout = false;
+    // }, 1000);
+  };
+
   raycaster.setFromCamera(mouse, camera);
-  const itemsToCheck = [textMesh];
+  const itemsToCheck = [textGroup];
   const intersect = raycaster.intersectObjects(itemsToCheck, true);
-  if (intersect.length > 0) {
+  // console.log(intersect);
+  if (intersect.length > 0 && !timeout) {
     document.getElementById('webgl').style.cursor = 'pointer';
-    window.addEventListener('click', () => {
-      console.log('clicked');
-    });
+    window.addEventListener(
+      'mousedown',
+      () => {
+        if (!timeout) {
+          handleClick();
+        }
+
+        // window.open('http://www.cnn.com');
+      },
+      { once: true }
+    );
   } else {
     document.getElementById('webgl').style.cursor = 'initial';
   }
