@@ -124,6 +124,7 @@ const loop = (time) => {
       menuHTML.style.width = 'calc(15vh + 15vw + 20px);';
       menuHTML.style.opacity = 1;
       timeout = false;
+      menuHTML.classList = 'container';
     }
     // setTimeout(() => {
     //   console.log('Handled click');

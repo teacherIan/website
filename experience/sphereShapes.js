@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
 import { sceneMaterial, sunMaterial } from './textureloader';
 
-const sphereGeometry = new THREE.SphereBufferGeometry(4, 32, 32);
+const sphereGeometry = new THREE.SphereBufferGeometry(4, 64, 64);
 
 export const createSphere = () => {
   const gameSphere = new THREE.Mesh(sphereGeometry, sceneMaterial);

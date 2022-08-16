@@ -11,10 +11,11 @@ body {
 }
 
 .container {
+  user-select: none;
   z-index: 1;
   width: 0;
   opacity: 0;
-  width: calc(20vh + 20vw + 20px);
+  width: 100vw;
   height: 100vh;
 
   position: absolute;
@@ -26,10 +27,14 @@ body {
   align-items: center;
   color: white;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.847);
+  background-color: rgba(0, 0, 0, 0.404);
   transition: 300ms all;
-  border-radius: 50px 0px 0px 50px;
+  /* border-radius: 50px 0px 0px 50px; */
 
+}
+
+.container.start {
+  transform: translateY(1000px);
 }
 
 .inner-container {
@@ -41,7 +46,7 @@ body {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
-
+  transition: 2s
 }
 
 .header {
@@ -53,24 +58,31 @@ body {
 
 .items {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  flex-direction: row;
+
 }
 
 .item {
+  display: flex;
   background-color: #85FFC7;
   width: 100px;
   height: 100px;
   margin: 20px;
+  cursor: pointer;
 
   transition: 2s;
 }
 
 .selected {
-  border: 300px solid white;
+  /* border: 100px solid white; */
   transition: 550ms;
-  border-radius: 50px;
+  border-radius: 10px;
   color: black;
+  transition: 2s;
+  background-color: white;
+  height: 150vh;
 }
 
 .three {
@@ -107,4 +119,41 @@ body {
   background-color: #A61C3C;
   z-index: -9;
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 78% 96%, 18% 85%, 0 65%, 0 0);
+}
+
+.description {
+  display: block;
+
+  opacity: 0;
+
+
+  transition: 400ms all;
+}
+
+.description-selected {
+  cursor: default;
+  opacity: 1;
+
+
+  transition: 400ms all;
+}
+
+.inner-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  z-index: 100;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #A61C3C;
+  color: white;
 }

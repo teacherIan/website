@@ -7,7 +7,7 @@ const vec = new THREE.Vector3(0, 0, 0);
 // export const directionalLight = new THREE.DirectionalLight('#ffffff', 2);
 // DirectionalLight.castShadow = true;
 
-export const pointLight = new THREE.PointLight('#ffffff', 6);
+export const pointLight = new THREE.PointLight('#ffffff', 10);
 pointLight.position.set(-20, 50, -10);
 pointLight.castShadow = true;
 
@@ -18,7 +18,7 @@ pointLight.shadow.camera.far = 150;
 
 // export const pointLightHelper = new THREE.PointLightHelper(pointLight);
 
-export const pointLightTwo = new THREE.PointLight('#ffffff', 6);
+export const pointLightTwo = new THREE.PointLight('#ffffff', 10);
 pointLightTwo.position.set(-40, 15, -5);
 pointLightTwo.castShadow = true;
 
@@ -41,5 +41,5 @@ export const pointLightHelperTwo = new THREE.CameraHelper(
 );
 
 export const paramsGUI = {
-  lightDistance: 63,
+  lightDistance: 70,
 };
