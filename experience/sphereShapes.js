@@ -20,19 +20,19 @@ export const createSphere = () => {
   };
 };
 
-const sunGeometry = new THREE.SphereBufferGeometry(6, 32, 32);
+const sunGeometry = new THREE.SphereBufferGeometry(1, 32, 32);
 
 export const sunMeshOne = new THREE.Mesh(sunGeometry, sunMaterial);
 export const sunMeshTwo = new THREE.Mesh(sunGeometry, sunMaterial);
 
-const cannonSunMeshOneBodyShape = new CANNON.Sphere(6);
+const cannonSunMeshOneBodyShape = new CANNON.Sphere(1);
 export const cannonSunMeshOneBody = new CANNON.Body({
   mass: 0,
   position: new CANNON.Vec3(0, 60, 0),
   shape: cannonSunMeshOneBodyShape,
 });
 
-const cannonSunMeshTwoBodyShape = new CANNON.Sphere(6);
+const cannonSunMeshTwoBodyShape = new CANNON.Sphere(1);
 export const cannonSunMeshTwoBody = new CANNON.Body({
   mass: 0,
   position: new CANNON.Vec3(0, 60, 0),

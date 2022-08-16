@@ -72,3 +72,5 @@ scene.background = new THREE.Color(backgroundColor);
 
 // controls.enablePan = false;
 // controls.enableRotate = false;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 0.1;

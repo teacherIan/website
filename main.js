@@ -2,7 +2,7 @@ const menuHTML = document.querySelector('.container');
 import './htmlController';
 import './style.css';
 import * as THREE from 'three';
-import { scene, renderer, camera } from './experience/init.js';
+import { scene, renderer, camera, controls } from './experience/init.js';
 import { worldFloor } from './experience/boxShapes';
 import {
   createSphere,
@@ -23,9 +23,13 @@ import {
 import { paramsGUI } from './experience/lights';
 import { raycaster, mouse } from './experience/raycaster';
 import './experience/datGui';
-import { textGroup } from './experience/text';
+// import { textGroup } from './experience/text';
 import { currentScene } from './experience/htmlController';
 import * as TWEEN from '@tweenjs/tween.js';
+import { stars } from './experience/particles';
+console.log(stars);
+
+scene.add(stars);
 
 let showMenu = false;
 let timeout = false;
@@ -54,7 +58,7 @@ document.body.appendChild(stats.dom);
  * Text Group
  */
 
-scene.add(textGroup);
+// scene.add(textGroup);
 
 /**
  * Add Lights
@@ -96,8 +100,8 @@ world.addBody(objectArray.cannon);
 const clock = new THREE.Clock();
 let oldElapsedTime = 0;
 
-const vector = new THREE.Vector3(100, -50, 0);
-camera.lookAt(vector);
+// const vector = new THREE.Vector3(100, -50, 0);
+// camera.lookAt(vector);
 
 const loop = (time) => {
   stats.update();
@@ -135,26 +139,26 @@ const loop = (time) => {
     // }, 1000);
   };
 
-  raycaster.setFromCamera(mouse, camera);
-  const itemsToCheck = [textGroup];
-  const intersect = raycaster.intersectObjects(itemsToCheck, true);
-  // console.log(intersect);
-  if (intersect.length > 0 && !timeout) {
-    document.getElementById('webgl').style.cursor = 'pointer';
-    window.addEventListener(
-      'mousedown',
-      () => {
-        if (!timeout) {
-          handleClick();
-        }
+  // raycaster.setFromCamera(mouse, camera);
+  // const itemsToCheck = [textGroup];
+  // const intersect = raycaster.intersectObjects(itemsToCheck, true);
+  // // console.log(intersect);
+  // if (intersect.length > 0 && !timeout) {
+  //   document.getElementById('webgl').style.cursor = 'pointer';
+  //   window.addEventListener(
+  //     'mousedown',
+  //     () => {
+  //       if (!timeout) {
+  //         handleClick();
+  //       }
 
-        // window.open('http://www.cnn.com');
-      },
-      { once: true }
-    );
-  } else {
-    document.getElementById('webgl').style.cursor = 'initial';
-  }
+  //       // window.open('http://www.cnn.com');
+  //     },
+  //     { once: true }
+  //   );
+  // } else {
+  //   document.getElementById('webgl').style.cursor = 'initial';
+  // }
 
   /**
    * World object is destroyed and recreated after falling
@@ -204,6 +208,7 @@ const loop = (time) => {
   // cannonDebugger.update();
 
   // cssRenderer.render(cssScene, camera);
+  controls.update();
   renderer.render(scene, camera);
 
   window.requestAnimationFrame(loop);

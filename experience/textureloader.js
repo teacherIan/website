@@ -40,4 +40,5 @@ export const sunMaterial = new THREE.MeshPhysicalMaterial({
   color: sunMaterialColor,
   side: THREE.DoubleSide,
   reflectivity: 0,
+  emissive: '#ffffff',
 });
