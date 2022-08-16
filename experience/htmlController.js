@@ -47,7 +47,8 @@ arrayOfItemDiv.forEach((item, i) => {
     if (selected == 0 && i < 3) {
       textArray[0].innerHTML = 'this is the description for ' + i;
       if (i == 0) {
-        textArray[0].innerHTML = `Counter system for school house systems.  Can easily be adapted for different schools and situations click  ${'<a target="_blank" href="http://www.cnn.com" class="link">here</a>'} for a demo page and ${'<a target="_blank" href="http://www.cnn.com" class="link">here</a>'} for the git repository.`;
+        textArray[0].innerHTML = `Counter system for school house systems.  Can easily be adapted for different schools and situations click  ${'<a target="_blank" href="https://houses-nine.vercel.app/" class="link">here</a>'} for a demo page or ${'<a target="_blank" href="https://github.com/teacherIan/front-end-update" class="link">here</a>'} for the git repository.`;
+        // item.style.border = `5px solid black`;
       }
     } else if (selected == 1 && i < 6) {
       console.log('Current item hovered = ' + i);
