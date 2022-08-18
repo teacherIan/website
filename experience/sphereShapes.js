@@ -20,7 +20,7 @@ export const createSphere = () => {
   };
 };
 
-const sunGeometry = new THREE.SphereBufferGeometry(1, 32, 32);
+const sunGeometry = new THREE.SphereBufferGeometry(10, 32, 32);
 
 export const sunMeshOne = new THREE.Mesh(sunGeometry, sunMaterial);
 export const sunMeshTwo = new THREE.Mesh(sunGeometry, sunMaterial);

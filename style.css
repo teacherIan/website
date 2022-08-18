@@ -69,6 +69,7 @@ body {
   width: 100%;
   align-items: center;
 
+
 }
 
 .item {
@@ -76,8 +77,9 @@ body {
   display: flex;
   justify-content: space-between;
   /* background-color: #85FFC7; */
-
-
+  max-height: 200px;
+  margin: 40px;
+  padding: 10px;
   cursor: pointer;
 
   transition: 2s;
@@ -187,13 +189,13 @@ body {
 .thumbnail {
   max-width: max-content;
   max-height: min-content;
-  transition: 600ms;
+  transition: 1s;
   /* border: rgb(255, 255, 255) 10px solid; */
 
 }
 
 .thumbnail:hover {
-  border: #A61C3C 10px solid;
+  border: #A61C3C 5px solid;
   border-radius: 50px;
   color: white;
 

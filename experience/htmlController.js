@@ -47,8 +47,11 @@ arrayOfItemDiv.forEach((item, i) => {
     if (selected == 0 && i < 3) {
       textArray[0].innerHTML = 'this is the description for ' + i;
       if (i == 0) {
-        textArray[0].innerHTML = `Counter system for school house systems.  Can easily be adapted for different schools and situations click  ${'<a target="_blank" href="https://houses-nine.vercel.app/" class="link">here</a>'} for a demo page or ${'<a target="_blank" href="https://github.com/teacherIan/front-end-update" class="link">here</a>'} for the git repository.`;
+        textArray[0].innerHTML = `I wanted to create more interest in our school 'house' system, especially for younger students, while giving older students an example of how they can use code to improve their school. This counter does both these things, and has been well received by students and facility.  Can easily be adapted for different schools and situations.  This project goes along with its backend project, to give teachers an easy way to add and remove points while keeping tabs on why points were add or removed.  click  ${'<a target="_blank" href="https://houses-nine.vercel.app/" class="link">here</a>'} for a demo page or ${'<a target="_blank" href="https://github.com/teacherIan/front-end-update" class="link">here</a>'} for the git repository.`;
         // item.style.border = `5px solid black`;
+      }
+      if (i == 1) {
+        textArray[0].innerHTML = `I wanted to create a learning platform for students that would leave the learner the skills needed to create programs the way professionals do.  Although under construction, my vision is for a students to be able to fully do a six month course using only this site, and by the end, have the abilities to use an IDE.  By able to create projects from scratch. Use basic git commands and deploy their programs. Although unfinished, you can view the site here ${'<a target="_blank" href="https://houses-nine.vercel.app/" class="link">here</a>'} for a demo page or ${'<a target="_blank" href="https://github.com/teacherIan/front-end-update" class="link">here</a>'} for the git repository.`;
       }
     } else if (selected == 1 && i < 6) {
       console.log('Current item hovered = ' + i);
