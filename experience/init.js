@@ -24,9 +24,9 @@ export const camera = new THREE.PerspectiveCamera(
   sizes.width / sizes.height
 );
 
-camera.position.z = 75;
-camera.position.y = 100;
-camera.position.x = 50;
+camera.position.z = 160;
+camera.position.y = 270;
+camera.position.x = 30;
 
 scene.add(camera);
 

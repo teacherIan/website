@@ -207,6 +207,7 @@ const loop = (time) => {
 
   // cannonDebugger.update();
 
+  console.log(camera.position);
   // cssRenderer.render(cssScene, camera);
   controls.update();
   renderer.render(scene, camera);

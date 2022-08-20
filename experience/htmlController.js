@@ -53,6 +53,9 @@ arrayOfItemDiv.forEach((item, i) => {
       if (i == 1) {
         textArray[0].innerHTML = `I wanted to create a learning platform for students that would leave the learner the skills needed to create programs the way professionals do.  Although under construction, my vision is for a students to be able to fully do a six month course using only this site, and by the end, have the abilities to use an IDE.  By able to create projects from scratch. Use basic git commands and deploy their programs. Although unfinished, you can view the site here ${'<a target="_blank" href="https://houses-nine.vercel.app/" class="link">here</a>'} for a demo page or ${'<a target="_blank" href="https://github.com/teacherIan/front-end-update" class="link">here</a>'} for the git repository.`;
       }
+      if (i == 2) {
+        textArray[0].innerHTML = `This project is designed to create interest in computer science while also being a fun and challenging house competition.  Students are asked to create a design mathematical design using javascript using a template I created.  Students with no coding experience can also take part in the challenge`;
+      }
     } else if (selected == 1 && i < 6) {
       console.log('Current item hovered = ' + i);
     } else if (selected == 2 && i < 9) {
