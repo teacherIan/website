@@ -11,6 +11,7 @@ body {
 }
 
 .container {
+
   user-select: none;
   z-index: 1;
   width: 0;
@@ -26,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   color: white;
-  justify-content: space-around;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.404);
   transition: 800ms
 }
@@ -43,6 +44,7 @@ body {
 }
 
 .inner-container {
+
   width: 100%;
   height: 100%;
   display: flex;
@@ -55,6 +57,7 @@ body {
 }
 
 .header {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,10 +67,12 @@ body {
 .items {
   display: flex;
   /* flex-wrap: wrap; */
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   width: 100%;
   align-items: center;
+
+
 
 
 }
@@ -75,13 +80,14 @@ body {
 .item {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   /* background-color: #85FFC7; */
-  max-height: 200px;
-  margin: 40px;
-  padding: 10px;
-  cursor: pointer;
+  width: fit-content;
+  margin: 0px 30px;
+  flex-wrap: wrap;
 
+
+  cursor: pointer;
   transition: 2s;
 }
 
@@ -92,7 +98,7 @@ body {
   color: black;
   transition: 2s;
   background-color: rgb(255, 255, 255);
-  height: 150vh;
+  height: 100vh;
 }
 
 .three {
@@ -134,20 +140,21 @@ body {
 .description {
   display: block;
   opacity: 0;
-  transition: 400ms all;
+
 }
 
 .description-selected {
   cursor: default;
   opacity: 1;
-  transition: 400ms all;
+
 }
 
 .inner-items {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: 100vw;
+  flex-wrap: wrap;
 }
 
 .exit-container {
@@ -172,10 +179,8 @@ body {
   background: none;
   color: white;
   cursor: pointer;
-
   height: 100px;
   width: 100px;
-
   transition: 500ms;
 
 }
@@ -187,15 +192,15 @@ body {
 }
 
 .thumbnail {
-  max-width: max-content;
-  max-height: min-content;
+
+  height: 100%;
   transition: 1s;
   /* border: rgb(255, 255, 255) 10px solid; */
 
 }
 
 .thumbnail:hover {
-  border: #A61C3C 5px solid;
+  height: 100%;
   border-radius: 50px;
   color: white;
 
@@ -252,4 +257,21 @@ body {
   border: white 5px solid;
 }
 
-.text .active {}
+.inner-items {}
+
+.text {
+  height: 100px;
+  margin: 0px 0px 30px 0px;
+
+}
+
+.project-items {
+  position: relative;
+  height: 0;
+
+
+}
+
+.inner-header {
+  font-size: 40px;
+}
