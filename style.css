@@ -85,10 +85,9 @@ body {
   width: fit-content;
   margin: 0px 30px;
   flex-wrap: wrap;
-
-
   cursor: pointer;
   transition: 2s;
+  opacity: .5;
 }
 
 .selected {
@@ -98,7 +97,7 @@ body {
   color: black;
   transition: 2s;
   background-color: rgb(255, 255, 255);
-  height: 100vh;
+  height: 150vh;
 }
 
 .three {
@@ -151,10 +150,11 @@ body {
 
 .inner-items {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100vw;
   flex-wrap: wrap;
+  padding: 10px 0px;
 }
 
 .exit-container {
@@ -261,7 +261,7 @@ body {
 
 .text {
   height: 100px;
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 30px 30px;
 
 }
 
@@ -273,5 +273,6 @@ body {
 }
 
 .inner-header {
-  font-size: 40px;
+  font-size: 30px;
+  padding: 10px 0px;
 }
